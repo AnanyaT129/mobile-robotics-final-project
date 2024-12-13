@@ -109,12 +109,11 @@ datasets = [
     # {"folder": "input_data/FR079_P", "is3D": False},
     # {"folder": "input_data/FRH_P", "is3D": False},
     # {"folder": "input_data/grid3D", "is3D": True},
-    # {"folder": "input_data/input_M3500", "is3D": True},
-    # {"folder": "input_data/INTEL_P", "is3D": True},
-    # {"folder": "input_data/killian-court", "is3D": True},
+    {"folder": "input_data/input_M3500", "is3D": False},
+    {"folder": "input_data/INTEL_P", "is3D": False},
     # {"folder": "input_data/parking-garage", "is3D": True},
-    {"folder": "input_data/sphere3D", "is3D": True},
-    {"folder": "input_data/torus3D", "is3D": False},
+    # {"folder": "input_data/sphere3D", "is3D": True},
+    {"folder": "input_data/torus3D", "is3D": True},
 ]
 
 results = []

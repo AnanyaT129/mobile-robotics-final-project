@@ -32,7 +32,6 @@ folders = [
     "input_data/grid3D",
     "input_data/input_M3500",
     "input_data/INTEL_P",
-    "input_data/killian-court",
     "input_data/parking-garage",
     "input_data/sphere3D",
     "input_data/torus3D",
