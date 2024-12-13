@@ -11,8 +11,8 @@ import pandas as pd
 
 def pathToFile(folder):
     return {
-        "original": os.path.join(folder, "original_data.g2o"),
-        "MASAT": os.path.join(folder, "MASAT_output.g2o"),
+        # "original": os.path.join(folder, "original_data.g2o"),
+        # "MASAT": os.path.join(folder, "MASAT_output.g2o"),
         "weighted_MASAT": os.path.join(folder, "MASAT_weighted_output.g2o")
     }
 
@@ -108,12 +108,12 @@ datasets = [
     # {"folder": "input_data/city10k", "is3D": False},
     # {"folder": "input_data/FR079_P", "is3D": False},
     # {"folder": "input_data/FRH_P", "is3D": False},
-    {"folder": "input_data/grid3D", "is3D": True},
+    # {"folder": "input_data/grid3D", "is3D": True},
     # {"folder": "input_data/input_M3500", "is3D": False},
     # {"folder": "input_data/INTEL_P", "is3D": False},
-    {"folder": "input_data/parking-garage", "is3D": True},
-    # {"folder": "input_data/sphere3D", "is3D": True},
-    # {"folder": "input_data/torus3D", "is3D": True},
+    # {"folder": "input_data/parking-garage", "is3D": True},
+    {"folder": "input_data/sphere3D", "is3D": True},
+    {"folder": "input_data/torus3D", "is3D": True},
 ]
 
 results = []
@@ -129,4 +129,4 @@ for d in datasets:
 
 # list gets saved as a csv file for easy analysis
 results_dataframe = pd.DataFrame(results)
-results_dataframe.to_csv("experiment_results_3d_1.csv", index=False)
+results_dataframe.to_csv("experiment_results_3d_2.csv", index=False)
