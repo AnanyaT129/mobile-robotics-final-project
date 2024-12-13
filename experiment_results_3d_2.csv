@@ -1,0 +1,7 @@
+Dataset,Algorithm,Initial Error,Optimization Runtime,Optimizer Iterations,Post Optimization Error
+input_data/sphere3D,original,67379969138.75164,2.115471839904785,3,126647.91064949405
+input_data/sphere3D,MASAT,88148429.27588876,1.4997057914733887,3,126647.91064950102
+input_data/sphere3D,weighted_MASAT,88148429.27588876,2.7107489109039307,3,126647.91064950102
+input_data/torus3D,original,0.0,5.9604644775390625e-06,0,0.0
+input_data/torus3D,MASAT,0.0,8.106231689453125e-06,0,0.0
+input_data/torus3D,weighted_MASAT,0.0,1.0251998901367188e-05,0,0.0
