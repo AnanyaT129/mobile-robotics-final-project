@@ -161,7 +161,7 @@ void Graph::writeFile2D(std::string outputPath){
     file.open(outputPath);
     if (!file) throw std::invalid_argument("ERROR: incorrect output path.");
 
-    for(auto x : positions2D){
+    for(auto x : positions2Dav){
         Node n = x.first;
         SE2 p = x.second;
         file<<"VERTEX_SE2 "<<n.getID()<<" "<<p.toString()<<std::endl;
@@ -183,7 +183,7 @@ void Graph::writeFile3D(std::string outputPath){
     file.open(outputPath);
     if (!file) throw std::invalid_argument("ERROR: incorrect output path.");
 
-    for(auto x : positions3D){
+    for(auto x : positions3Dav){
         Node n = x.first;
         SE3 p = x.second;
         file<<"VERTEX_SE3:QUAT "<<n.getID()<<" "<<p.toString()<<std::endl;
@@ -348,6 +348,7 @@ void Graph::runWeightedMASAT2D(){
             }
 
             double weight = heuristic2D(e, positions2D.at(current), positions2D.at(neighbor));
+            std::cout <<weight<< std::endl;
 
             s+=weight;
             SE2 guess = positions2D[neighbor] * e.getM();
@@ -426,6 +427,7 @@ void Graph::runWeightedMASAT3D(){
             double weight = heuristic3D(e, positions3D.at(current), positions3D.at(neighbor));
 
             s+=weight;
+            std::cout <<weight<< std::endl;
             SE3 guess = positions3D[neighbor] * e.getM();
             guesses.push_back(Quat(guess[6], guess[3], guess[4], guess[5]));
             vx += weight * guess[0];
@@ -438,6 +440,7 @@ void Graph::runWeightedMASAT3D(){
             Vec v_avg(vx / s, vy / s, vz / s);
             Quat q_avg = averageQuaternions(guesses);
             positions3Dav[current] = SE3(v_avg, q_avg);
+            std::cout<<"Changed"<<std::endl;
         } else {
             positions3Dav[current] = positions3D[current];
         }
